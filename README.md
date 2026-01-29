@@ -78,7 +78,7 @@ migrations/
 
 Create chat
 
-#### `POST /chats`
+### `POST /chats`
 
 Request:
 ```
@@ -99,7 +99,7 @@ Response:
 
 Send message
 
-POST /chats/{id}/messages
+### `POST /chats/{id}/messages`
 
 Request:
 ```
@@ -121,7 +121,7 @@ Response:
 
 Get chat with messages
 
-GET /chats/{id}?limit=20
+### `GET /chats/{id}?limit=20`
 
 Response:
 ```
@@ -147,7 +147,7 @@ Response:
 
 Delete chat
 
-DELETE /chats/{id}
+### `DELETE /chats/{id}`
 
 Response:
 ```
