@@ -81,19 +81,19 @@ Create chat
 POST /chats
 
 Request:
-
+```
 {
   "title": "My chat"
 }
-
+```
 Response:
-
+```
 {
   "id": 1,
   "title": "My chat",
   "created_at": "2026-01-29T20:32:44Z"
 }
-
+```
 
 ⸻
 
@@ -102,20 +102,20 @@ Send message
 POST /chats/{id}/messages
 
 Request:
-
+```
 {
   "text": "Hello"
 }
-
+```
 Response:
-
+```
 {
   "id": 1,
   "chat_id": 1,
   "text": "Hello",
   "created_at": "2026-01-29T20:33:01Z"
 }
-
+```
 
 ⸻
 
@@ -124,7 +124,7 @@ Get chat with messages
 GET /chats/{id}?limit=20
 
 Response:
-
+```
 {
   "id": 1,
   "title": "My chat",
@@ -138,7 +138,7 @@ Response:
     }
   ]
 }
-
+```
 Сообщения возвращаются:
 	•	отсортированными по created_at
 	•	ограниченными параметром limit (по умолчанию 20, максимум 100)
@@ -150,9 +150,9 @@ Delete chat
 DELETE /chats/{id}
 
 Response:
-
+```
 204 No Content
-
+```
 Все сообщения чата удаляются каскадно.
 
 ⸻
@@ -160,11 +160,11 @@ Response:
 ❌ Error Response Format
 
 Все ошибки возвращаются в едином формате:
-
+```
 {
   "error": "chat not found"
 }
-
+```
 HTTP-коды используются корректно (400, 404, 500).
 
 ⸻
@@ -192,9 +192,3 @@ make test
 
 ⸻
 
-👤 Author
-
-Test task implementation
-2026
-
----
