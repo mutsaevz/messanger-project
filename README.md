@@ -78,7 +78,7 @@ migrations/
 
 Create chat
 
-POST /chats
+`POST /chats`
 
 Request:
 ```
