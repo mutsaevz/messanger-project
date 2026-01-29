@@ -55,6 +55,7 @@ make up
 docker compose up --build
 ```
 После запуска:
+
 	•	API доступен по адресу:
 	
 http://localhost:8080
