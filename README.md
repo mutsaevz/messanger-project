@@ -55,12 +55,9 @@ make up
 docker compose up --build
 ```
 После запуска:
-
-•	API доступен по адресу: http://localhost:8080
-	
-•	PostgreSQL запускается в Docker
-	
-•	Миграции применяются автоматически при старте
+	•	API доступен по адресу: http://localhost:8080
+	•	PostgreSQL запускается в Docker
+	•	Миграции применяются автоматически при старте
 
 ⸻
 
