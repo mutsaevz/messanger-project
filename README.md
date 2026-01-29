@@ -20,6 +20,7 @@ REST API for managing chats and messages.
 
 ## 📦 Project Structure
 
+```
 .
 ├── cmd/app              # application entrypoint
 ├── internal
@@ -35,7 +36,7 @@ REST API for managing chats and messages.
 ├── Dockerfile
 ├── docker-compose.yaml
 └── Makefile
-
+```
 ---
 
 ## 🚀 Run Project
@@ -48,11 +49,11 @@ REST API for managing chats and messages.
 
 ```bash
 make up
-
+```
 или напрямую:
-
+```
 docker compose up --build
-
+```
 После запуска:
 	•	API доступен по адресу:
 http://localhost:8080
