@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16
+    container_name: test-messenger-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: chat_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    image: golang:1.25-alpine
+    container_name: test-messenger-migrate
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./migrations:/migrations
+    working_dir: /migrations
+    command: >
+      sh -c "
+        export GOBIN=/usr/local/bin &&
+        go install github.com/pressly/goose/v3/cmd/goose@v3.20.0 &&
+        /usr/local/bin/goose -dir /migrations postgres 'postgres://postgres:postgres@db:5432/chat_db?sslmode=disable' up
+      "
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-messenger-app
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      APP_ENV: docker
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: chat_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_SSLMODE: disable
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  db_data:
