@@ -2,19 +2,22 @@
 
 REST API for managing chats and messages.
 
-Проект выполнен в рамках тестового задания.  
 Реализованы чаты, сообщения, миграции БД, Docker-окружение и тесты.
 
 ---
 
 ## 🧱 Tech Stack
 
-- Go (net/http)
-- PostgreSQL
-- GORM
-- Goose (database migrations)
-- Docker / Docker Compose
-- Testify, httptest
+<p>
+  <img alt="Go (net/http)" src="https://img.shields.io/badge/-Go_(net/http)-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img alt="GORM" src="https://img.shields.io/badge/-GORM-2D3748?style=for-the-badge&logo=go&logoColor=white" />
+  <img alt="Goose (Migrations)" src="https://img.shields.io/badge/-Goose_(Migrations)-4B5563?style=for-the-badge&logo=go&logoColor=white" />
+  <img alt="Docker" src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img alt="Docker Compose" src="https://img.shields.io/badge/-Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img alt="Testify" src="https://img.shields.io/badge/-Testify-25A162?style=for-the-badge&logo=go&logoColor=white" />
+  <img alt="httptest" src="https://img.shields.io/badge/-httptest-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+</p>
 
 ---
 
